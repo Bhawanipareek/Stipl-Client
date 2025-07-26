@@ -1,0 +1,73 @@
+﻿@page "/login"
+
+@using System.Text.RegularExpressions
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow p-4">
+                <div class="text-center logo-container mb-4">
+                    <img src="Images/stipl-logo.png" alt="Company Logo" class="company-logo" />
+                </div>
+                <h4 class="text-center mb-4">Login via Mobile</h4>
+
+                <!-- Mobile Input -->
+                <div class="form-group mb-3">
+                    <label for="mobile">Mobile Number</label>
+                    <input @bind="MobileNumber" @bind:event="oninput" type="tel" class="form-control" id="mobile" maxlength="10" placeholder="Enter mobile number">
+                </div>
+
+                <!-- Send OTP Button -->
+                @if (!IsOtpSent)
+                {
+                    <button class="btn btn-primary w-100 mb-3" @onclick="SendOtp" disabled="@(!IsMobileValid)">
+                        <i class="bi bi-send"></i> Send OTP
+                    </button>
+                }
+
+                <!-- OTP Input -->
+                @if (IsOtpSent)
+                {
+                    <div class="form-group mb-3">
+                        <label for="otp">Enter OTP</label>
+                        <input @bind="Otp" type="text" class="form-control" id="otp" maxlength="6" placeholder="Enter OTP">
+                    </div>
+
+                    <button class="btn btn-success w-100" @onclick="VerifyOtp">
+                        Login
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string MobileNumber { get; set; }
+    private string Otp { get; set; }
+    private bool IsOtpSent { get; set; } = false;
+
+    private bool IsMobileValid =>
+        !string.IsNullOrWhiteSpace(MobileNumber) &&
+        Regex.IsMatch(MobileNumber, @"^[6-9]\d{9}$");
+
+    private void SendOtp()
+    {
+        // Simulate sending OTP
+        IsOtpSent = true;
+        // Optionally: Show toast/alert or call API
+    }
+
+    private void VerifyOtp()
+    {
+        // Validate OTP (add your real logic here)
+        if (Otp == "1234") // For demo
+        {
+            // Navigate to next page or show success
+        }
+        else
+        {
+            // Show error message (e.g., invalid OTP)
+        }
+    }
+}

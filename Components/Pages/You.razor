@@ -1,0 +1,29 @@
+﻿@page "/you"
+
+
+<h2 class="welcome-text">Hello, BHAWANI SHANKAR PAREEK</h2>
+
+<div class="button-grid">
+    <button class="menu-btn">Sales Invoice</button>
+    <button class="menu-btn">Sales Return</button>
+    <button class="menu-btn">Receipt</button>
+    <button class="menu-btn">Payment</button>
+    <button class="menu-btn">Credit Note</button>
+    <button class="menu-btn">Debit Note</button>
+    <button class="menu-btn">Transport Receipt</button>
+    <button class="menu-btn">Pending Order</button>
+    <button class="menu-btn">My Outstanding</button>
+    <button class="menu-btn" @onclick="GoToAccounts" >A/C Statement </button>
+    <button class="menu-btn">Order Status</button>
+    <button class="menu-btn">Schemes</button>
+</div>
+
+@code {
+	private void GoToAccounts()
+	{
+		NavigationManager.NavigateTo("/accounts");
+	}
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+}

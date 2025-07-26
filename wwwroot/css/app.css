@@ -1,0 +1,92 @@
+﻿/* Entire layout container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 60px; /* Footer height */
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 8px 15px;
+    border-bottom: 0px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+}
+
+    .header img {
+        height: 50px;
+        margin: -20px;
+    }
+
+.Menu i {
+    color: #cc0000;
+    font-size: 24px;
+}
+
+/* Dropdown styling */
+.dropdown-bar {
+    margin-top: 50px; /* height of header */
+    padding:12px;
+    border-bottom: 0px solid #ccc;
+    background-color: #fff;
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+    border-radius: 200px;
+}
+
+    .dropdown-bar select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color:aliceblue;
+        border-radius: 250px;
+    }
+
+/* Main content area */
+.main-content {
+    padding: 5px;
+    padding-top: 15px;
+    flex-grow: 1;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding: 6px 0;
+    z-index: 1000;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 12px;
+}
+
+    .footer-item i {
+        font-size: 20px;
+    }
+
+    .footer-item.active {
+        color: #007bff;
+    }

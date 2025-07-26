@@ -1,0 +1,245 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    padding: 0px;
+    background-color: #ffffff; /* Light gray background */
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #333;
+}
+/*Slider*/
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+}
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+.caption {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: rgba(53, 83, 255, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 250px;
+    z-index: 1;
+}
+
+    .slider-nav.prev {
+        left: 10px;
+    }
+
+    .slider-nav.next {
+        right: 10px;
+    }
+
+/*Slider End */
+/* Order Tracking 
+.status-card {
+            background-color: white;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 12px;
+            padding: 24px;
+           text-align: center;
+        }
+        
+        .status-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 24px;
+        }
+        
+        .status-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 32px;
+        }
+        
+        .status-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 28px;
+            bottom: -20px;
+            width: 2px;
+            background-color: #e0e0e0;
+        }
+        
+        .status-bullet {
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .bullet-completed {
+            background-color: #34C759;
+        }
+        
+        .bullet-active {
+            background-color: #FF9500;
+        }
+        
+        .bullet-problem {
+            background-color: #FF3B30;
+        }
+        
+        .status-text {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .status-subtext {
+            font-size: 14px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+Order Tracking End */
+
+
+/*Offer Banner */
+.image-grid {
+    display: grid;
+    gap: 5px;
+    padding: 2px;
+    background-color: #ffffff;
+    grid-template-columns: repeat(2, 1fr); /* Mobile default: 2 */
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    display: block;
+}
+
+/* Hide everything after 2 items on small screen */
+@media (max-width: 768px) {
+    .image-box:nth-child(n+3) {
+        display: none;
+    }
+}
+
+
+/* Tablet: show all and 3 columns */
+@media (min-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .image-box {
+        display: block; /* show all */
+    }
+
+        .image-box:nth-child(n+3) {
+            display: none;
+        }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*Offer Banner  end */
+
+/* Grid layout */
+.category-grid {
+    display: grid;
+    gap: -2px;
+    grid-template-columns: repeat(3, 1fr); /* Mobile */
+}
+
+/* Card with transparent background */
+.category-item {
+    background: transparent;
+    padding: 2px;
+    text-align: center;
+}
+
+    /* Image: no border, only shadow */
+    .category-item img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+        display: block;
+        margin: 2px;
+        border-radius: 5px;
+        /* box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);  Soft shadow only */
+    }
+
+    /* Text below image */
+    .category-item p {
+        margin-top: -15px;
+        font-size: 10px;
+        font-weight: 900;
+        color: #333;
+    }
+
+/* Tablet: 4 columns */
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop: 6 columns */
+@media (min-width: 1024px) {
+    .category-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
