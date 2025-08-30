@@ -1,0 +1,94 @@
+﻿@page "/sales-invoice"
+
+
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --bg-light: #f8f9fa;
+      --text-dark: #212529;
+      --border-color: #dee2e6;
+      --font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .invoice-table th {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+
+    .invoice-table tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  </style>
+
+  <header>
+    <h1>Sales Invoice Dashboard</h1>
+    
+  </header>
+
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Invoice No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>08/08/2025</td><td>SD/2025-26/554</td></tr>
+      <tr><td>06/08/2025</td><td>SD/2025-26/546</td></tr>
+      <tr><td>10/04/2025</td><td>SD/2025-26/38</td></tr>
+      <tr><td>11/01/2025</td><td>SD/2024-25/1486</td></tr>
+      <tr><td>04/01/2025</td><td>SD/2024-25/1453</td></tr>
+      <tr><td>30/12/2024</td><td>SD/2024-25/1425</td></tr>
+      <tr><td>17/12/2024</td><td>SD/2024-25/1353</td></tr>
+      <tr><td>06/12/2024</td><td>ST/2024-25/3136</td></tr>
+      <tr><td>05/12/2024</td><td>SD/2024-25/1281</td></tr>
+      <tr><td>03/12/2024</td><td>SD/2024-25/1271</td></tr>
+      <tr><td>03/12/2024</td><td>SD/2024-25/1272</td></tr>
+      <tr><td>28/11/2024</td><td>ST/2024-25/3123</td></tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>

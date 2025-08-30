@@ -1,0 +1,83 @@
+﻿@page "/schemes"
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-header ui-sortable-handle" style="cursor: move;">
+            <h3 class="card-title text-center">
+                <i class="ion ion-clipboard mr-1"></i>
+                Scheme List
+            </h3>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table id="schemeTable" class="table table-hover table-bordered table-striped align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Scheme Name</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr class="clickable-row" data-href="Schemes/SchemeDetail?schemeId=20&startDate=04/01/2025 00:00:00">
+                                            <td>1</td>
+                                            <td class="link-primary fw-bolder fs6">
+                                                <a>
+                                                    Tadkeshwar 25-26 Target
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-success fs-6 fst-italic fw-bolder">
+                                                    Running
+                                                </span>
+                                            </td> 
+                                        </tr>
+                                        <tr class="clickable-row" data-href="Schemes/SchemeDetail?schemeId=23&startDate=05/01/2025 00:00:00">
+                                            <td>2</td>
+                                            <td class="link-primary fw-bolder fs6">
+                                                <a>
+                                                    Diwali Dhamaka Offer
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-success fs-6 fst-italic fw-bolder">
+                                                    Running
+                                                </span>
+                                            </td> 
+                                        </tr>
+                                        <tr class="clickable-row" data-href="Schemes/SchemeDetail?schemeId=31&startDate=08/01/2025 00:00:00">
+                                            <td>3</td>
+                                            <td class="link-primary fw-bolder fs6">
+                                                <a>
+                                                    Diwali Scheme on Detergent
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-success fs-6 fst-italic fw-bolder">
+                                                    Running
+                                                </span>
+                                            </td> 
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                   
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".clickable-row").forEach(function(row) {
+        row.addEventListener("click", function() {
+          const target = this.getAttribute("data-href");
+          if (target) {
+            window.location.href = target;
+          }
+        });
+      });
+    });
+</script>
+  
+

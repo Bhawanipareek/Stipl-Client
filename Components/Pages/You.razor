@@ -1,29 +1,28 @@
 ﻿@page "/you"
 
-
 <h2 class="welcome-text">Hello, BHAWANI SHANKAR PAREEK</h2>
 
 <div class="button-grid">
-    <button class="menu-btn">Sales Invoice</button>
-    <button class="menu-btn">Sales Return</button>
-    <button class="menu-btn">Receipt</button>
-    <button class="menu-btn">Payment</button>
-    <button class="menu-btn">Credit Note</button>
-    <button class="menu-btn">Debit Note</button>
-    <button class="menu-btn">Transport Receipt</button>
-    <button class="menu-btn">Pending Order</button>
-    <button class="menu-btn">My Outstanding</button>
-    <button class="menu-btn" @onclick="GoToAccounts" >A/C Statement </button>
-    <button class="menu-btn">Order Status</button>
-    <button class="menu-btn">Schemes</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/sales-invoice"))">Sales Invoice</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/sales-return"))">Sales Return</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/receipt"))">Receipt</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/payment"))">Payment</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/credit-note"))">Credit Note</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/debit-note"))">Debit Note</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/transport-receipt"))">Transport Receipt</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/pending-order"))">Pending Order</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/my-outstanding"))">My Outstanding</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/accounts"))">A/C Statement</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/order-status"))">Order Status</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/schemes"))">Schemes</button>
+    <button class="menu-btn" @onclick="@(() => NavigateTo("/categories"))">Categories</button>
 </div>
 
 @code {
-	private void GoToAccounts()
-	{
-		NavigationManager.NavigateTo("/accounts");
-	}
+    [Inject] private NavigationManager NavigationManager { get; set; }
 
-    [Inject]
-    private NavigationManager NavigationManager { get; set; }
+    private void NavigateTo(string url)
+    {
+        NavigationManager.NavigateTo(url);
+    }
 }

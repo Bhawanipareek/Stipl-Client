@@ -74,78 +74,116 @@ h2 {
     }
 
 /*Slider End */
-/* Order Tracking 
-.status-card {
-            background-color: white;
-            width: 100%;
-            max-width: 100%;
-            border-radius: 12px;
-            padding: 24px;
-           text-align: center;
-        }
-        
-        .status-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 24px;
-        }
-        
-        .status-item {
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 32px;
-        }
-        
-        .status-item:not(:last-child)::after {
-            content: "";
-            position: absolute;
-            left: 15px;
-            top: 28px;
-            bottom: -20px;
-            width: 2px;
-            background-color: #e0e0e0;
-        }
-        
-        .status-bullet {
-            position: absolute;
-            left: 0;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .bullet-completed {
-            background-color: #34C759;
-        }
-        
-        .bullet-active {
-            background-color: #FF9500;
-        }
-        
-        .bullet-problem {
-            background-color: #FF3B30;
-        }
-        
-        .status-text {
-            font-size: 16px;
-            color: #333;
-            line-height: 1.4;
-        }
-        
-        .status-subtext {
-            font-size: 14px;
-            color: #666;
-            margin-top: 2px;
-        }
+/* Order Tracking*/
+.card {
+    z-index: 0;
+    background-color: #ECEFF1;
+    padding-bottom: -10px;
+    margin-top: -60px;
+    margin-bottom: -40px;
+    border-radius: 2px;
+}
 
-Order Tracking End */
+.top {
+    padding-top: 0px;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
+/*Icon progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: #455A64;
+    padding-left: 0px;
+    margin-top: 10px;
+}
+
+    #progressbar li {
+        list-style-type: none;
+        font-size: 13px;
+        width: 25%;
+        float: left;
+        position: relative;
+        font-weight: 400;
+    }
+
+    #progressbar .step0:before {
+        font-family: FontAwesome;
+        content: "\f10c";
+        color: #fff;
+    }
+
+    #progressbar li:before {
+        width: 40px;
+        height: 40px;
+        line-height: 45px;
+        display: block;
+        font-size: 20px;
+        background: #C5CAE9;
+        border-radius: 50%;
+        margin: auto;
+        padding: 0px;
+    }
+
+    /*ProgressBar connectors*/
+    #progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 12px;
+        background: #C5CAE9;
+        position: absolute;
+        left: 0;
+        top: 16px;
+        z-index: -1;
+    }
+
+    #progressbar li:last-child:after {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        left: -50%;
+    }
+
+    #progressbar li:nth-child(2):after, #progressbar li:nth-child(3):after {
+        left: -50%;
+    }
+
+    #progressbar li:first-child:after {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        position: absolute;
+        left: 50%;
+    }
+
+    #progressbar li:last-child:after {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #progressbar li:first-child:after {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    /*Color number of the step and the connector before it*/
+    #progressbar li.active:before, #progressbar li.active:after {
+        background: #651FFF;
+    }
+
+    #progressbar li.active:before {
+        font-family: FontAwesome;
+        content: "\f00c";
+    }
+
+
+@media screen and (max-width: 992px) {
+    .icon-content {
+        width: 50%;
+    }
+}
+
+/*Order Tracking End */
 
 
 /*Offer Banner */

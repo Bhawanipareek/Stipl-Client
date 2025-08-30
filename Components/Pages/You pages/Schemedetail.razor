@@ -1,0 +1,31 @@
+﻿
+<div id="rozerSliderWrapper" style="width:100%; max-width:600px; margin:auto; overflow:hidden; background:#fff8e1; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <div id="rozerSliderTrack" style="display:flex; transition:transform 0.5s ease-in-out;">
+        <div class="rozerSlide" style="min-width:100%; text-align:center; padding:10px;">
+            <img src="https://via.placeholder.com/150?text=GOPAL+UTSAV" style="width:150px; border-radius:8px;"><br>
+            <strong>GOPAL UTSAV 400 ML</strong>
+        </div>
+        <div class="rozerSlide" style="min-width:100%; text-align:center; padding:10px;">
+            <img src="https://via.placeholder.com/150?text=KANHAIYA" style="width:150px; border-radius:8px;"><br>
+            <strong>KANHAIYA 15 KG</strong>
+        </div>
+        <div class="rozerSlide" style="min-width:100%; text-align:center; padding:10px;">
+            <img src="https://via.placeholder.com/150?text=SHREE+RAS" style="width:150px; border-radius:8px;"><br>
+            <strong>SHREE RAS 900 ML</strong>
+        </div>
+        <!-- Add more slides as needed -->
+    </div>
+</div>
+
+<script>
+    (function() {
+      const track = document.getElementById("rozerSliderTrack");
+      const slides = document.querySelectorAll(".rozerSlide");
+      let index = 0;
+
+      setInterval(() => {
+        index = (index + 1) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }, 3000); // Slide every 3 seconds
+    })();
+</script>

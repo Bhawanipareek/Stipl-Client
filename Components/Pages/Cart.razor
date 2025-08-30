@@ -1,1 +1,177 @@
 ﻿@page "/cart"
+
+<body>
+    
+        <!-- Navbar End -->
+        <!-- Modal Search Start -->
+        <div b-b8g41xpkt0 class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div b-b8g41xpkt0 class="modal-dialog modal-fullscreen">
+                <div b-b8g41xpkt0 class="modal-content rounded-0">
+                    <div b-b8g41xpkt0 class="modal-header">
+                        <h5 b-b8g41xpkt0 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button b-b8g41xpkt0 type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div b-b8g41xpkt0 class="modal-body d-flex align-items-center">
+                        <div b-b8g41xpkt0 class="input-group w-75 mx-auto d-flex">
+                            <input b-b8g41xpkt0 type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span b-b8g41xpkt0 id="search-icon-1" class="input-group-text p-3"><i b-b8g41xpkt0 class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+        <!-- Advertisement Modal -->
+        <div b-b8g41xpkt0 class="modal fade" id="advertModal" tabindex="-1" aria-labelledby="advertModalLabel" aria-hidden="true">
+            <div b-b8g41xpkt0 class="modal-dialog modal-dialog-centered modal-lg">
+                <div b-b8g41xpkt0 class="modal-content">
+                    <div b-b8g41xpkt0 class="modal-header">
+                        <h5 b-b8g41xpkt0 class="modal-title" id="advertModalLabel">Message Notification</h5>
+                        <button b-b8g41xpkt0 type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+                    <div b-b8g41xpkt0 class="modal-body text-center p-0">
+                        <img b-b8g41xpkt0 id="imgMessageBanner" class="img-fluid" alt="Advertisement" />
+                        <p b-b8g41xpkt0 class="mt-3" id="messageDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div b-b8g41xpkt0 class="main-content">
+
+<div class="col-lg-12 cart-page">
+    <div class="clearfix">&nbsp;</div>
+    <h6 class="container-fluid po-text-heading-xxs pd-bottom ">My Cart (<span class="header-main-right-cart-count">0</span>)  <label id="amtPlaceorder" class="po-text-heading-xxs amtPlaceorder text-end" style="color:#141414; width:70%;">&nbsp;</label></h6>
+        <div class="container-fluid vesitable text-center pd-bottom">
+            <img src="https://clients.tadkeshwarfoods.com/img/em
+pty-cart.svg" alt="Image of empty cart" />
+            <div class="clearfix">&nbsp;</div>
+            <h6 class="text-heading-bold ">Your Cart is Empty!</h6>
+            <span class="text-heading-light">
+                It's a nice day to buy the items you saved for later!
+            </span>
+            <div class="clearfix"></div>
+            <span class="text-heading-light">
+                or <a class="link-primary" href="/">Continue Shopping</a>
+            </span>
+        </div>
+    <div class="container-fluid vesitable pd-bottom">
+        <div id="productMightYouLike">
+            <div class="col-md-12 text-center">
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-1">
+        <h6 class="container-fluid po-text-heading-xxs">Cart Detail</h6>
+        <div class="row">
+
+            <section class="pb-4" id="continueButtonForm">
+                <div class="rounded-5">
+                    <section class="w-100 pt-3 pb-2">
+                        <div class="row p-2">
+
+                            <div class="col-sm-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" placeholder="Leave a remark here" id="remark" />
+                                    <label for="floatingTextarea2">Remark</label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="main-footer-custom placeorder">
+    <ul>
+        <li style="width:50%; text-align:left;" >
+            <span id="amtPlaceorder" class="po-text-heading-xxs amtPlaceorder" style="color:#141414">&nbsp;</span>
+        </li>
+        <li style="width:50%;">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmOrderModal">
+                Place Order
+            </button>
+        </li>
+    </ul>
+</footer>
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="confirmOrderModal" tabindex="-1" aria-labelledby="confirmOrderModalLabel" aria-hidden="true" style="top:40%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmOrderModalLabel">Confirm Order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Please Confirm Your Order.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnPlaceOrder">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix">&nbsp;</div>
+
+    </div>
+    <div b-b8g41xpkt0 class="clearfix">&nbsp;</div>
+    <div b-b8g41xpkt0 class="clearfix">&nbsp;</div>
+    <!-- Back to Top -->
+    
+  
+
+
+    <script>
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            $.ajax({
+            url: "/Message/MessageNotification",
+            type: "GET",
+            contentType: "application/json",
+            success: function (result) {
+                Global.hideloader();
+                if (!result.isSuccess) {
+                    Global.AlertifyError(result.message, 'top-center');
+                } else {
+                    if (Global.IsNotNullOrEmptyString(result.data) && result.data.totalCount > 0) {
+                        $('.header-main-right-message-count').removeAttr('style');
+                        $('.header-main-right-message-count').text(result.data.totalCount);
+
+
+                        if(result.data.imgFileName || result.data.description)
+                        {
+                            var createDate = result.data.createdDate;
+                            const storedDate = localStorage.getItem("popupShownDate");
+                            if (!storedDate || createDate > storedDate)
+                            {
+                                if(result.data.imgFileName) {
+                                    $('#imgMessageBanner').attr('src', 'https://assets.tadkeshwarfoods.com/images/' + result.data.imgFileName);
+                                } else {
+                                    $('#imgMessageBanner').hide();
+                                }
+                                var advertModal = new bootstrap.Modal(document.getElementById('advertModal'));
+                                advertModal.show();
+                                $('#messageDescription').text(result.data.description);
+                                localStorage.setItem("popupShownDate", createDate);
+                            }
+                        }
+                    }
+                }
+            },
+            error: function (xhr, status, error) {
+                Global.hideloader();
+                console.error(`Error: ${error}, Status: ${status}, Response: ${xhr.responseText}`);
+            }
+        });
+        });
+    </script>
+
+</body>
+

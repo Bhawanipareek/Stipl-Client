@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    background:#ffffff;
+    color:var(--titel-color);
+    padding:40px 12px;
+}
+.card{
+   margin-top:10px;
+   margin:7px;
+}
+.message-item{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:14px 2px;
+}
+.thumb{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    border-radius:6px;
+    flex-shrink:0;
+    border:1px solid;
+    background:#ffffff
+}
+.message-body{
+    flex:1 1 auto;
+}
+.message-top{
+    display:flex;
+    gap: 12px;
+    align-items:center;
+    flex-wrap:13px;
+}
+.title{
+    margin:0;
+    font-size:18px;
+    font-weight:700;
+}
+.date{
+    margin-left:auto;
+    color:black;
+    font-size:13px;
+}
+.desc{
+    margin:8px 0 10px 0;
+}

@@ -1,0 +1,116 @@
+﻿@page "/accounts"
+
+<style>
+    body {
+        background-color: #f0f2f5;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .statement-container {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+    }
+
+    .statement-title {
+        color: #1c294c;
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+        text-align: left;
+    }
+
+    .form-label {
+        display: block;
+        color: #555;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+            outline: none;
+        }
+
+    .btn-primary {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+        }
+
+    (max-width: 480px) {
+        .statement-container
+
+    {
+        padding: 1.5rem;
+    }
+
+    .statement-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    }
+</style>
+
+<body>
+    <div class="statement-container">
+        <h2 class="statement-title">Account Statement</h2>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="StartDate" class="form-label">Start Date</label>
+                <input type="date" id="StartDate" class="form-control" value="2025-04-01">
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate" class="form-label">End Date</label>
+                <input type="date" id="EndDate" class="form-control" value="2025-07-24">
+            </div>
+
+            <button type="submit" class="btn-primary">Get Account Statement</button>
+        </form>
+    </div>
+
+
+</body>
+<script>
+    // Disable future dates in both inputs
+    document.addEventListener("DOMContentLoaded", function () {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById("StartDate").setAttribute("max", today);
+        document.getElementById("EndDate").setAttribute("max", today);
+    });
+</script>

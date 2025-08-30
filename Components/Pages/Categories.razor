@@ -1,0 +1,65 @@
+﻿@page "/categories"
+@using Stipl_Client.Models
+@inject Stipl_Client.Services.ApiService ApiService
+
+<h3>📂 Categories</h3>
+
+@if (categoryList == null)
+{
+    <p>Loading data...</p>
+}
+else if (!categoryList.Any())
+{
+    <p>No categories found.</p>
+}
+else
+{
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;">
+        @foreach (var cat in categoryList)
+        {
+            <div style="border:1px solid #ccc;padding:10px;border-radius:10px;text-align:center;">
+                <img src="@cat.Image" alt="@cat.Title" style="width:100px;height:100px;" />
+                <h4>@cat.Title</h4>
+                <button @onclick="() => Delete(cat.Id)">❌ Delete</button>
+            </div>
+        }
+    </div>
+}
+
+<h4>Add New Category</h4>
+<input @bind="newCategory.Title" placeholder="Title" />
+<input @bind="newCategory.Image" placeholder="Image URL" />
+<button @onclick="AddCategory">➕ Add</button>
+
+@code {
+    private List<Category> categoryList;
+    private Category newCategory = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Console.WriteLine("Fetching categories...");
+            categoryList = await ApiService.GetCategoriesAsync();
+            Console.WriteLine($"Got {categoryList?.Count} categories");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error: {ex.Message}");
+        }
+    }
+
+    private async Task AddCategory()
+    {
+        newCategory.Id = new Random().Next(1000, 9999);
+        await ApiService.CreateCategoryAsync(newCategory);
+        categoryList = await ApiService.GetCategoriesAsync();
+        newCategory = new();
+    }
+
+    private async Task Delete(int id)
+    {
+        await ApiService.DeleteCategoryAsync(id);
+        categoryList = await ApiService.GetCategoriesAsync();
+    }
+}
